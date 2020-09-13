@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifumi</title>
+    <script src="https://kit.fontawesome.com/e9f9599f85.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="dead"></div>
+    <div class="centrer"><button class="button2" id="retry" style="display:none">Réessayer</button></div>
+    <div class="centrer"><p style="display:none" id="end"><br><br><br>FIN.</p></div>
+    <div class="container" id="container">
+
+        <!-- Header Section -->
+        <section class="header">
+            <!-- <div class="header__title">
+                <h1>BULBIZARRE</h1>
+                <h1>CARAPUCE</h1>
+                <h1>SALAMÈCHE</h1>
+            </div> -->
+            <div class="scoreboards-container">
+                <div class="scoreboard">
+                    <p class="scoreboard__title">SACHA</p>
+                    <img height="120px" src="sacha.jpg" />
+                    <div>
+                        <p id="playerScore"></p>
+                    </div>
+                </div>
+                <div class="scoreboard">
+                    <p>VS</p>
+                </div>
+                <div class="scoreboard">
+                    <p id=regisname class="scoreboard__title">RÉGIS</p>
+                    <div id="regis"><img height="120px" src="https://vignette.wikia.nocookie.net/pokemon59/images/7/7b/Gary_badges.png/revision/latest/scale-to-width-down/340?cb=20140525124550&path-prefix=fr" /></div>
+                    <div>
+                        <p id="computerScore"></p>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section class="game" id="game">
+            <div id="osef">
+                <div id="bulbizarre">
+                </div>
+                <div id="jauge"></div>
+                <!-- <div style="width:200px;height:20px;border:1px solid #000; background: red; margin:auto"></div> -->
+                <p id="player-life"></p>
+                
+
+                <div id='bazooka' class='attack-container' ></div>
+
+                <!-- les trois attaques -->
+                
+                <div class="attack-container">
+                    <div id="attack1" class="attack">
+                    <img src="pierre.png" height="50px" class="icone"/>
+                    </div>
+                    <div id="attack2" class="attack">
+                    <img src="feuille.png" height="50px" class="icone"/>
+                    </div>            
+                    <div id="attack3" class="attack">
+                    <img src="ciseaux.png" height="50px" class="icone"/>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <!-- box entre les des pokémons -->
+            <div class="game__option">
+
+                <!-- box pour mettre les choice en ligne au lieu de colonne comme les deux autres box -->
+                
+                <div class="line">
+                <div class="marge-top"></div>
+                
+
+                  <div id="modal" class="modal">
+                    <div class="modal-inner content center">
+                      <h2>Quoi !? Bulbizarre évolue ???!</h2>
+                      <p>Que voulez-vous augmenter ?</p>
+                      <button id="lifeXp" class="button">La vie</button>
+                      <button id="esquiXp" class="button">L'esquive</button>
+                      <button id="bazooXp" class="button">Obtenir un bazooka</button>
+                    </div>
+                  </div>
+
+                    <div class="attack-container">
+                        <div id="player-choice"></div>
+                    </div>
+        
+                    <div class="attack-container">
+                        <div id="ennemy-choice"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- box du pokémon ennemi -->
+            <div id="scissors">
+
+                
+                <div id="pok"></div>
+                <!-- <img src="carap.gif" id="ennemy-pokemon" class="game__option"> -->
+                <div id="jauge2"></div>
+                <p id="computer-life"></p>
+
+
+
+                <p class="marge"></p>
+                
+                <!-- les trois attaques -->
+                
+                <!-- <div class="attack-container, hide">
+                    <div id="attack4" class="attack">
+                    <img src="pierre.png" height="50px"/>
+                    </div>
+                    <div id="attack5" class="attack">
+                    <img src="https://tinyurl.com/y4bdbl93" height="50px"/>
+                    </div>            
+                    <div id="attack6" class="attack">
+                    <img src="https://tinyurl.com/yyqhrvq8" height="50px"/>
+                    </div>
+                </div> -->
+
+            </div>
+            <!-- <div id="rock" class="gameButton">
+                <img src="salam.gif" class="fa-4x game__option">
+            </div> -->
+        </section>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    
+
+    <!-- <script type="text/javascript" src="./libgif.js"></script>
+    <img src="carap.gif" rel:animated_src="bulbi.gif"
+     width="160" height="160" rel:auto_play="1" rel:rubbable="1" />
+     -->
+
+
+
+
+     
+</body>
+
+
+
+</html>
