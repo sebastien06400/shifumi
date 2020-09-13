@@ -199,6 +199,7 @@ function fight () {
         playerLife.innerHTML = life+' pv'
         playerChoice.innerHTML = '<img src=pierre.png height=70px />'
         ennemyChoice.innerHTML = '<img src=feuille.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+        playerPokemon = document.getElementById('player-pokemon')
         playerPokemon.style.backgroundColor = "red"
         impact3.play();
         setTimeout(clear, 300)
@@ -215,6 +216,7 @@ function fight () {
         jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
         playerChoice.innerHTML = '<img src=pierre.png height=70px />'
         ennemyChoice.innerHTML = '<img src=ciseaux.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+        ennemyPokemon = document.getElementById('ennemy-pokemon')
         ennemyPokemon.style.backgroundColor = "red"
         impact2.play();
         setTimeout(clear, 300)
@@ -285,6 +287,7 @@ function fightb () {
             playerLife.innerHTML = life+' pv'
             playerChoice.innerHTML = '<img src=feuille.png height=70px />'
             ennemyChoice.innerHTML = '<img src=ciseaux.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+            playerPokemon = document.getElementById('player-pokemon')
             playerPokemon.style.backgroundColor = "red"
             impact3.play();
             setTimeout(clear, 300)
@@ -302,6 +305,7 @@ function fightb () {
         jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
         playerChoice.innerHTML = '<img src=feuille.png height=70px />'
         ennemyChoice.innerHTML = '<img src=pierre.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+        ennemyPokemon = document.getElementById('ennemy-pokemon')
         ennemyPokemon.style.backgroundColor = "red"
         impact2.play();
         setTimeout(clear, 300)
@@ -366,6 +370,7 @@ function fightc () {
             playerLife.innerHTML = life+' pv'
             playerChoice.innerHTML = '<img src=ciseaux.png height=70px />'
             ennemyChoice.innerHTML = '<img src=pierre.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+            playerPokemon = document.getElementById('player-pokemon')
             playerPokemon.style.backgroundColor = "red"
             impact3.play();
             setTimeout(clear, 300)
@@ -383,6 +388,7 @@ function fightc () {
         jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
         playerChoice.innerHTML = '<img src=ciseaux.png height=70px />'
         ennemyChoice.innerHTML = '<img src=feuille.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+        ennemyPokemon = document.getElementById('ennemy-pokemon')
         ennemyPokemon.style.backgroundColor = "red"
         impact2.play();
         setTimeout(clear, 300)
@@ -411,6 +417,7 @@ function fightbazooka () {
         health2 = health2-mult
         computerLife.innerHTML = life2+' pv'
         jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
+        ennemyPokemon = document.getElementById('ennemy-pokemon')
         ennemyPokemon.style.backgroundColor = "red"
         playerChoice.innerHTML = '<img src=bazooka.png height=70px />'
         ennemyChoice.innerHTML = '<img src=feuille.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
@@ -433,6 +440,7 @@ function fightbazooka () {
         health2 = health2-mult
         computerLife.innerHTML = life2+' pv'
         jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
+        ennemyPokemon = document.getElementById('ennemy-pokemon')
         ennemyPokemon.style.backgroundColor = "red"
         playerChoice.innerHTML = '<img src=bazooka.png height=70px />'
         ennemyChoice.innerHTML = '<img src=ciseaux.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
@@ -454,6 +462,7 @@ function fightbazooka () {
         health2 = health2-mult
         computerLife.innerHTML = life2+' pv'
         jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
+        ennemyPokemon = document.getElementById('ennemy-pokemon')
         ennemyPokemon.style.backgroundColor = "red"
         playerChoice.innerHTML = '<img src=bazooka.png height=70px />'
         ennemyChoice.innerHTML = '<img src=pierre.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
@@ -474,6 +483,7 @@ function bam () {
 
     life2 = life2-1
     health2 = health2-mult
+    ennemyPokemon = document.getElementById('ennemy-pokemon')
     ennemyPokemon.style.backgroundColor = "red"
     computerLife.innerHTML = life2+' pv'
     jauge2.innerHTML = '<div style="width:'+health2+'px;height:20px;border:1px solid #000; background: purple"></div>'    
