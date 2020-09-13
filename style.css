@@ -111,7 +111,7 @@ body {
     padding: 10px;
     margin-top: 10px;
     
-	border: 1px black solid;
+	/* border: 1px black solid; */
 }
 
 .game div {
@@ -140,7 +140,6 @@ body {
 
     /* border-radius: 50%; */
     margin: auto;
-    margin: 10px;
     /* border: 2px solid #57657F; */
 
 }
@@ -284,7 +283,7 @@ body {
   max-height: 800px;
   padding: 20px;
   margin: 12px;
-  background: #fff;
+  background: rgb(134, 162, 223);
 }
 
 /* The .modal__close class is used in js but is modified '--x' here */

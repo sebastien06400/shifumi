@@ -1,7 +1,7 @@
 
 
 let playerLife = document.getElementById("player-life")
-let life = 12
+let life = 10
 playerLife.innerHTML = life+' pv'
 
 let retry = document.getElementById('retry')
@@ -12,7 +12,7 @@ let pok = document.getElementById("pok")
 pok.innerHTML = '<img src="carap.gif" id="ennemy-pokemon" class="game__option"/>'
 
 let bulbizarre = document.getElementById("bulbizarre")
-bulbizarre.innerHTML = '<img src="bulbi.gif" id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
+bulbizarre.innerHTML = '<img src="bulbi.gif" height=150px id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
 
 
 let regis = document.getElementById('regis')
@@ -27,7 +27,7 @@ let baz = false
 
 let kill = 0
 
-
+let esqui = 0.2
 
 
 // let playerJauge = document.getElementById("player-jauge")
@@ -177,7 +177,22 @@ function fight () {
 
     let dice = Math.trunc(Math.random()*3+1)
 
-    if (dice === 2 && life > 0) {
+    if (dice === 2) {
+        
+        let dice2 = Math.random()
+
+        if (dice2 < esqui) { 
+
+            actupoke = bulbizarre.innerHTML
+            bulbizarre.innerHTML = '<img src="esquive.png" height=150px id="player-pokemon" class="game__option">'
+            playerChoice.innerHTML = '<img src=pierre.png height=70px />'
+            ennemyChoice.innerHTML = '<img src=feuille.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+    
+            setTimeout(clear,700)
+            setTimeout(resetpok,700)
+            // pas réglé le blocker mais osef
+            }
+        else if (dice2 > esqui && life > 1) {
         life = life-1
         health = health-15*(mult1)
         jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"; margin= "auto"></div>'
@@ -188,11 +203,10 @@ function fight () {
         impact3.play();
         setTimeout(clear, 300)
         }
-
-    if (dice === 2 && life < 1) {
+        else if (dice2 > esqui && life < 2) {
         death()
+        }
     }
-
 
     if (dice === 3) {
         life2 = life2-1
@@ -251,25 +265,37 @@ function fightb () {
 
     let dice = Math.trunc(Math.random()*3+1)
 
-    if (dice === 3 && life > 0) {
-        life = life-1
-        health = health-(15*(mult1))
-        jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"; margin= "auto"></div>'
-        playerLife.innerHTML = life+' pv'
-        playerChoice.innerHTML = '<img src=feuille.png height=70px />'
-        ennemyChoice.innerHTML = '<img src=ciseaux.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
-        playerPokemon.style.backgroundColor = "red"
-        impact3.play();
-        setTimeout(clear, 300)
-    }
+    if (dice === 3) {
 
-    if (dice === 3 && life < 1) {
+        let dice2 = Math.random()
 
-        death()
-    
+        if (dice2 < esqui) { 
+
+            actupoke = bulbizarre.innerHTML
+            bulbizarre.innerHTML = '<img src="esquive.png" id="player-pokemon" class="game__option">'
+            playerChoice.innerHTML = '<img src=pierre.png height=70px />'
+            ennemyChoice.innerHTML = '<img src=feuille.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+            setTimeout(clear,700)
+            setTimeout(resetpok,700)
+            }    
+        else if (dice2 > esqui && life > 1) {
+            life = life-1
+            health = health-(15*(mult1))
+            jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"; margin= "auto"></div>'
+            playerLife.innerHTML = life+' pv'
+            playerChoice.innerHTML = '<img src=feuille.png height=70px />'
+            ennemyChoice.innerHTML = '<img src=ciseaux.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+            playerPokemon.style.backgroundColor = "red"
+            impact3.play();
+            setTimeout(clear, 300)
+        }
+        else if (dice2 > esqui && life < 2) {
+            death()
+        }   
 }
 
     if (dice === 1) {
+        
         life2 = life2-1
         health2 = health2-mult
         computerLife.innerHTML = life2+' pv'
@@ -320,20 +346,34 @@ function fightc () {
 
     let dice = Math.trunc(Math.random()*3+1)
 
-    if (dice === 1 && life > 0) {
-        life = life-1
-        health = health-15*(mult1)
-        jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"; margin= "auto"></div>'
-        playerLife.innerHTML = life+' pv'
-        playerChoice.innerHTML = '<img src=ciseaux.png height=70px />'
-        ennemyChoice.innerHTML = '<img src=pierre.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
-        playerPokemon.style.backgroundColor = "red"
-        impact3.play();
-        setTimeout(clear, 300)
+    if (dice === 1) {
+    
+            let dice2 = Math.random()
+
+        if (dice2 < esqui) { 
+
+            actupoke = bulbizarre.innerHTML
+            bulbizarre.innerHTML = '<img src="esquive.png" id="player-pokemon" class="game__option">'
+            playerChoice.innerHTML = '<img src=pierre.png height=70px />'
+            ennemyChoice.innerHTML = '<img src=feuille.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+            setTimeout(clear,700)
+            setTimeout(resetpok,700)
+            }    
+            else if (dice2 > esqui && life > 1) {
+                life = life-1
+            health = health-15*(mult1)
+            jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"; margin= "auto"></div>'
+            playerLife.innerHTML = life+' pv'
+            playerChoice.innerHTML = '<img src=ciseaux.png height=70px />'
+            ennemyChoice.innerHTML = '<img src=pierre.png height=70px style="transform: scaleX(-1);"; margin= "auto"/>'
+            playerPokemon.style.backgroundColor = "red"
+            impact3.play();
+            setTimeout(clear, 300)
+        }
+        else if (dice2 > esqui && life < 2) {
+            death()
+        }   
     }
-    if (dice === 1 && life < 1) {
-        death()
-}
     
 
     if (dice === 2) {
@@ -510,7 +550,7 @@ function pokemon3 () {
     jauge2.innerHTML = ''
     pok.innerHTML = "Nooooon ! Évoli !!!<br>Mais tu l'as tué !<br>Tu vas le regretter..."
     setTimeout (dialogue3, 3000)
-    setTimeout (dialogue4, 6000)
+    setTimeout (dialogue4, 7000)
 
 }
 
@@ -595,9 +635,9 @@ function pokemon5 () {
     setTimeout (dialogue12, 17000)
     setTimeout (dialogue13, 22000)
     setTimeout (dialogue14, 26000)
-    setTimeout (dialogue15, 30000)
-    setTimeout (dialogue16, 35000)
-    setTimeout (dialogue17, 37000)
+    setTimeout (dialogue15, 29000)
+    setTimeout (dialogue16, 34000)
+    setTimeout (dialogue17, 36000)
 
 
 
@@ -631,7 +671,7 @@ function dialogue14 () {
 
 function dialogue15 () {
     florievo.play();
-    bulbizarre.innerHTML = '<img src="flori.gif" id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
+    bulbizarre.innerHTML = '<img src="flori.gif" height=150px id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
 }
 
 function dialogue16 () {
@@ -658,7 +698,7 @@ function death() {
 
 
 function evolution () {
-    bulbizarre.innerHTML = '<img src="herbi.gif" id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
+    bulbizarre.innerHTML = '<img src="herbi.gif" height=150px id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
 
     playerChoice.style.display = 'none'
     ennemyChoice.style.display = 'none'
@@ -677,16 +717,21 @@ function evolution () {
 //     if(keyCode == 87 || keyCode == 119){
 //         console.log("You pressed W!");
 //         alert("You pressed W!");
+//         let actupoke = bulbizarre.innerHTML
+//         console.log(actupoke)
 //     }
-// });
+// })
 
 let module = document.getElementById('modal')
 
 
 document.addEventListener("keydown", event => {
     if (event.keyCode === 87) {
-      console.log(retry);
-      
+      bulbizarre.innerHTML = '<img src="flori.gif" height=150px id="player-pokemon" class="game__option" style="transform: scaleX(-1)">'
+      life=life+2
+      jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"; margin= "auto"></div>'
+      playerLife.innerHTML = life+' pv'
+
         
     }
     
@@ -697,6 +742,9 @@ let lifeXp = document.getElementById('lifeXp')
 let esquiXp = document.getElementById('esquiXp')
 let bazooXp = document.getElementById('bazooXp')
 
+function resetpok () {
+    bulbizarre.innerHTML = actupoke
+}
 
 lifeXp.addEventListener("click", () => {
     life = life+5
@@ -711,7 +759,7 @@ lifeXp.addEventListener("click", () => {
 })
 
 esquiXp.addEventListener("click", () => {
-    life = life+5
+    esqui = 0.6
     playerLife.innerHTML = life+' pv'
     jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"></div>'
     module.style.display = 'none'
@@ -723,6 +771,8 @@ esquiXp.addEventListener("click", () => {
 bazooXp.addEventListener("click", () => {
     bazooka.innerHTML = '<div class="attack"><img src="bazooka.png" height="50px" width="50px" style="display:flex" class="icone" class="attack" style="border:2px solid #57657F"></div>'
     baz = true
+    playerLife.innerHTML = life+' pv'
+    jauge.innerHTML = '<div style="width:'+health+'px;height:20px;border:1px solid #000; background: red"></div>'
     module.style.display = 'none'
     blocker = false
     playerChoice.style.display = 'initial'
