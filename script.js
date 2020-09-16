@@ -590,6 +590,7 @@ function pokemon4() {
     playerChoice.style.display = 'none'
     ennemyChoice.style.display = 'none'
     red.play();
+    red.volume = 0.5;
     pok.innerHTML = ''
     computerLife.innerHTML = ''
     jauge2.innerHTML = ''
@@ -639,6 +640,7 @@ function pokemon5() {
     pok.innerHTML = "..."
     red.pause();
     win.play();
+    win.volume = 0.4;
     setTimeout(dialogue9, 3000)
     setTimeout(dialogue10, 7000)
     setTimeout(dialogue11, 12000)
